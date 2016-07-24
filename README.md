@@ -10,5 +10,6 @@ Simple Example:
 Multiple Docker containers with MySQL backend:
 - Create [config.ini](https://github.com/AHAAAAAAA/PokemonGo-Map/blob/develop/config/config.ini.example)
 - docker run -d --name Pokemap --link mysql:mysql -v config_stachus.ini:/PokemonGo-Map/config/config.ini scazadar/pokemap -se -L de
+
 Starts second server without webserver:
 - docker run -d --name Pokemap --link mysql:mysql -v config_marienplatz.ini:/PokemonGo-Map/config/config.ini scazadar/pokemap -se -L de -ns
