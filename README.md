@@ -1,4 +1,4 @@
-# POKEMAP
+# POKEMON GO MAP
 This is a Docker Image for https://github.com/AHAAAAAAA/PokemonGo-Map/tree/develop
 
 ## Examples
