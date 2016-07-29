@@ -1,4 +1,4 @@
-# POKEMON GO MAP
+# POKEMON GO MAP DEVELOP
 This is a Docker Image for https://github.com/AHAAAAAAA/PokemonGo-Map/tree/develop
 
 # RUN IN THE CLOUD
