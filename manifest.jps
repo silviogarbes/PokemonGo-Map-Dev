@@ -92,36 +92,31 @@
           "name": "db-type",
           "caption": "Database Type",
           "type": "string",
-          "default": "mysql or sqlite",
-          "required": "false"
+          "default": "mysql or sqlite"
         },
         {
           "name": "db-host",
           "caption": "Mysql Host",
           "type": "string",
-          "default": "",
-          "required": "false"
+          "default": ""
         },
         {
           "name": "db-name",
           "caption": "Mysql Database Name",
           "type": "string",
-          "default": "",
-          "required": "false"
+          "default": ""
         },
         {
           "name": "db-user",
           "caption": "Mysql User",
           "type": "string",
-          "default": "",
-          "required": "false"
+          "default": ""
         },
         {
           "name": "db-pass",
           "caption": "Mysql Password",
           "type": "string",
-          "default": "",
-          "required": "false"
+          "default": ""
         }
       ]
     },
