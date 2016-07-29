@@ -1,0 +1,110 @@
+{
+  "jpsType": "install",
+  "application": {
+    "name": "PokemonGo Map Develop",
+    "homepage": "https://github.com/AHAAAAAAA/PokemonGo-Map/tree/develop",
+    "description": "Find all the pokemon in your area... and more!",
+    "logo": "https://raw.githubusercontent.com/sych74/PokemonGo-Map-in-Cloud/master/images/icon-70x70.png",
+    "settings": {
+      "fields": [
+        {
+          "default": "google",
+          "type": "radio-fieldset",
+          "values": {
+            "google": "Your Google Account",
+            "pkmclb": "Your Pkmn Club Account"
+          },
+          "name": "account",
+          "showIf": {
+            "google": [
+              {
+                "name": "google-username",
+                "caption": "Google User",
+                "type": "string",
+                "inputType": "string",
+                "default": "",
+                "required": "true"
+              },
+              {
+                "name": "google-password",
+                "caption": "Google Password",
+                "type": "string",
+                "inputType": "password",
+                "default": "",
+                "required": "true"
+              },
+              {
+                "name": "google-auth",
+                "type": "string",
+                "inputType": "hidden",
+                "default": "google",
+                "required": "true"
+              }
+            ],
+            "pkmclb": [
+              {
+                "name": "pkmclb-username",
+                "caption": "Pkmn Club User",
+                "type": "string",
+                "default": "",
+                "required": "true"
+              },
+              {
+                "name": "pkmclb-password",
+                "caption": "Pkmn Club Pswd",
+                "type": "string",
+                "inputType": "password",
+                "default": "",
+                "required": "true"
+              },
+              {
+                "name": "pkmclb-auth",
+                "type": "string",
+                "inputType": "hidden",
+                "default": "ptc",
+                "required": "true"
+              }
+            ]
+          }
+        },
+        {
+          "name": "location",
+          "caption": "Your Location",
+          "type": "string",
+          "default": "429 Castro St, San Francisco, CA 94114",
+          "required": "true"
+        },
+        {
+          "name": "stepsAway",
+          "caption": "Steps Away",
+          "type": "string",
+          "default": "10",
+          "required": "true"
+        },
+        {
+          "name": "gmapKey",
+          "caption": "Google Map API Key",
+          "type": "string",
+          "default": "AIzaSyDwvxkpEpEUzXR7qKFAQjYNmOQqkYS2NBU",
+          "required": "true"
+        }
+      ]
+    },
+    "env": {
+      "displayName": "Map Server",
+      "topology": {
+        "nodes": [
+          {
+            "cloudlets": 16,
+            "nodeGroup": "cp",
+            "nodeType": "docker",
+            "docker": {
+              "image": "silviogarbes/pokemap",
+              "cmd": "-a $( [ -z \"${settings.pkmclb-username}\" ] && echo \"${settings.google-auth}\" || echo \"${settings.pkmclb-auth}\") -u $( [ -z \"${settings.pkmclb-username}\" ] && echo \"${settings.google-username}\" || echo \"${settings.pkmclb-username}\") -p $( [ -z \"${settings.pkmclb-password}\" ] && echo \"${settings.google-password}\" || echo \"${settings.pkmclb-password}\") -l \"${settings.location}\" -st \"${settings.stepsAway}\" -k \"${settings.gmapKey}\" --port 80 -sd 10"
+            }
+          }
+        ]
+      }
+    }
+  }
+}
