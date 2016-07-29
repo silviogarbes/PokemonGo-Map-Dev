@@ -87,6 +87,41 @@
           "type": "string",
           "default": "AIzaSyDwvxkpEpEUzXR7qKFAQjYNmOQqkYS2NBU",
           "required": "true"
+        },
+        {
+          "name": "db-type",
+          "caption": "Database Type",
+          "type": "string",
+          "default": "mysql or sqlite",
+          "required": "false"
+        },
+        {
+          "name": "db-host",
+          "caption": "Mysql Host",
+          "type": "string",
+          "default": "",
+          "required": "false"
+        },
+        {
+          "name": "db-name",
+          "caption": "Mysql Database Name",
+          "type": "string",
+          "default": "",
+          "required": "false"
+        },
+        {
+          "name": "db-user",
+          "caption": "Mysql User",
+          "type": "string",
+          "default": "",
+          "required": "false"
+        },
+        {
+          "name": "db-pass",
+          "caption": "Mysql Password",
+          "type": "string",
+          "default": "",
+          "required": "false"
         }
       ]
     },
@@ -100,7 +135,7 @@
             "nodeType": "docker",
             "docker": {
               "image": "silviogarbes/pokemap",
-              "cmd": "-a $( [ -z \"${settings.pkmclb-username}\" ] && echo \"${settings.google-auth}\" || echo \"${settings.pkmclb-auth}\") -u $( [ -z \"${settings.pkmclb-username}\" ] && echo \"${settings.google-username}\" || echo \"${settings.pkmclb-username}\") -p $( [ -z \"${settings.pkmclb-password}\" ] && echo \"${settings.google-password}\" || echo \"${settings.pkmclb-password}\") -l \"${settings.location}\" -st \"${settings.stepsAway}\" -k \"${settings.gmapKey}\" --port 80 -sd 10"
+              "cmd": "-a $( [ -z \"${settings.pkmclb-username}\" ] && echo \"${settings.google-auth}\" || echo \"${settings.pkmclb-auth}\") -u $( [ -z \"${settings.pkmclb-username}\" ] && echo \"${settings.google-username}\" || echo \"${settings.pkmclb-username}\") -p $( [ -z \"${settings.pkmclb-password}\" ] && echo \"${settings.google-password}\" || echo \"${settings.pkmclb-password}\") -l \"${settings.location}\" -st \"${settings.stepsAway}\" -k \"${settings.gmapKey}\" --port 80 -sd 10 --db-host \"${settings.db-host}\" --db-type \"${settings.db-type}\" --db-name \"${settings.db-name}\" --db-user \"${settings.db-user}\" --db-pass \"${settings.db-pass}\" "
             }
           }
         ]
