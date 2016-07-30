@@ -1,6 +1,6 @@
 FROM alpine
 RUN  apk update
-RUN  apk add git py-pip gcc build-base python-dev
+RUN  apk add git py-pip gcc build-base python-dev curl
 RUN  curl -L https://npmjs.org/install.sh | sh
 RUN  npm install --silent -g gulp-cli grunt-cli bower 
 RUN  git clone https://github.com/AHAAAAAAA/PokemonGo-Map.git -b develop
