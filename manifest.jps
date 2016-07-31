@@ -1,7 +1,7 @@
 {
   "jpsType": "install",
   "application": {
-    "name": "PokemonGo Map Develop",
+    "name": "PokemonGo Map Dev",
     "homepage": "https://github.com/AHAAAAAAA/PokemonGo-Map/tree/develop",
     "description": "Find all the pokemon in your area... and more!",
     "logo": "https://raw.githubusercontent.com/sych74/PokemonGo-Map-in-Cloud/master/images/icon-70x70.png",
@@ -134,7 +134,7 @@
             "nodeGroup": "cp",
             "nodeType": "docker",
             "docker": {
-              "image": "silviogarbes/PokemonGo-Map-Develop",
+              "image": "silviogarbes/PokemonGo-Map-Dev",
               "cmd": "-a $( [ -z \"${settings.pkmclb-username}\" ] && echo \"${settings.google-auth}\" || echo \"${settings.pkmclb-auth}\") -u $( [ -z \"${settings.pkmclb-username}\" ] && echo \"${settings.google-username}\" || echo \"${settings.pkmclb-username}\") -p $( [ -z \"${settings.pkmclb-password}\" ] && echo \"${settings.google-password}\" || echo \"${settings.pkmclb-password}\") -l \"${settings.location}\" -st \"${settings.stepsAway}\" -k \"${settings.gmapKey}\" --port 80 -sd 10 --db-host \"${settings.db-host}\" --db-type \"${settings.db-type}\" --db-name \"${settings.db-name}\" --db-user \"${settings.db-user}\" --db-pass \"${settings.db-pass}\" "
             }
           }
