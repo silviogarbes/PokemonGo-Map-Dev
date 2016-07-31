@@ -1,10 +1,10 @@
 FROM python:2.7-alpine
-WORKDIR /PokemonGo-Map
 RUN apk update
 RUN apk add git py-pip gcc build-base python-dev nodejs
 RUN apk add --no-cache ca-certificates
 RUN git clone https://github.com/AHAAAAAAA/PokemonGo-Map.git -b develop
-RUN pip install -r /PokemonGo-Map/requirements.txt
+WORKDIR /PokemonGo-Map
+RUN pip install -r requirements.txt
 RUN npm install -g grunt-cli
 RUN npm install
 RUN npm run-script build 
