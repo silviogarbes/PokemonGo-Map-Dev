@@ -1,4 +1,5 @@
 FROM python:2.7-alpine
+WORKDIR /PokemonGo-Map
 RUN apk update
 RUN apk add git py-pip gcc build-base python-dev nodejs
 RUN apk add --no-cache ca-certificates
