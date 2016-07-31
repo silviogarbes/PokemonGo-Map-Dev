@@ -2,7 +2,7 @@
   "jpsType": "install",
   "application": {
     "name": "PokemonGo Map Dev",
-    "homepage": "https://github.com/AHAAAAAAA/PokemonGo-Map/tree/develop",
+    "homepage": "https://github.com/silviogarbes/PokemonGo-Map-Dev/",
     "description": "Find all the pokemon in your area... and more!",
     "logo": "https://raw.githubusercontent.com/sych74/PokemonGo-Map-in-Cloud/master/images/icon-70x70.png",
     "settings": {
@@ -87,41 +87,6 @@
           "type": "string",
           "default": "AIzaSyDwvxkpEpEUzXR7qKFAQjYNmOQqkYS2NBU",
           "required": "true"
-        },
-        {
-          "name": "db-type",
-          "caption": "Database Type",
-          "type": "string",
-          "default": "mysql",
-          "required": "true"
-        },
-        {
-          "name": "db-host",
-          "caption": "Mysql Host",
-          "type": "string",
-          "default": "",
-          "required": "true"
-        },
-        {
-          "name": "db-name",
-          "caption": "Mysql Database Name",
-          "type": "string",
-          "default": "",
-          "required": "true"
-        },
-        {
-          "name": "db-user",
-          "caption": "Mysql User",
-          "type": "string",
-          "default": "",
-          "required": "true"
-        },
-        {
-          "name": "db-pass",
-          "caption": "Mysql Password",
-          "type": "string",
-          "default": "",
-          "required": "true"
         }
       ]
     },
@@ -134,7 +99,7 @@
             "nodeGroup": "cp",
             "nodeType": "docker",
             "docker": {
-              "image": "silviogarbes/PokemonGo-Map-Dev",
+              "image": "silviogarbes/pokemongo-map-dev",
               "cmd": "-a $( [ -z \"${settings.pkmclb-username}\" ] && echo \"${settings.google-auth}\" || echo \"${settings.pkmclb-auth}\") -u $( [ -z \"${settings.pkmclb-username}\" ] && echo \"${settings.google-username}\" || echo \"${settings.pkmclb-username}\") -p $( [ -z \"${settings.pkmclb-password}\" ] && echo \"${settings.google-password}\" || echo \"${settings.pkmclb-password}\") -l \"${settings.location}\" -st \"${settings.stepsAway}\" -k \"${settings.gmapKey}\" --port 80 -sd 10"
             }
           }
