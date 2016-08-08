@@ -7,7 +7,7 @@ WORKDIR /PokemonGo-Map
 RUN pip install -r requirements.txt
 RUN npm install -g grunt-cli
 RUN npm install
-#RUN npm run-script build 
-RUN gem install travis
+# RUN npm run-script build 
+# RUN gem install travis
 COPY ./entrypoint.sh /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]
